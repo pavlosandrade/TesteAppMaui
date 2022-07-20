@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using Teste.Data;
+using Blazorise;
+using Blazorise.Bootstrap;
 
 namespace Teste;
 
@@ -18,10 +19,15 @@ public static class MauiProgram
 		builder.Services.AddMauiBlazorWebView();
 		#if DEBUG
 		builder.Services.AddBlazorWebViewDeveloperTools();
-#endif
-		
-		builder.Services.AddSingleton<WeatherForecastService>();
 
-		return builder.Build();
+		builder.Services.AddBlazorise(options =>
+		{
+			options.Immediate = true;
+		});
+
+		builder.Services.AddBootstrapProviders();
+#endif
+
+        return builder.Build();
 	}
 }

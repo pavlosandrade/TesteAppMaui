@@ -49,4 +49,13 @@
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Data\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Blazorise" Version="1.0.5" />
+      <PackageReference Include="Blazorise.Bootstrap" Version="1.0.5" />
+    </ItemGroup>
+
 </Project>
