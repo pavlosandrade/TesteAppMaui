@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Teste.Models;
+using Blazorise;
+using Blazorise.DataGrid;
 
 namespace Teste.Shared.Components.PessoaLista
 {
@@ -17,7 +19,7 @@ namespace Teste.Shared.Components.PessoaLista
             zabala = new List<Pessoa>();
             zabala.Add(new Pessoa()
             {
-                Id = 2,
+                Id = 1,
                 Nome ="jhon"
             }) ;
 

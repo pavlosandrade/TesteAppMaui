@@ -36,7 +36,7 @@
         <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#dc3545" BaseSize="128,128" />
 
         <!-- Images -->
         <MauiImage Include="Resources\Images\*" />
@@ -50,12 +50,18 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\" />
+      <AndroidResource Remove="Data\**" />
+      <Compile Remove="Data\**" />
+      <Content Remove="Data\**" />
+      <EmbeddedResource Remove="Data\**" />
+      <MauiXaml Remove="Data\**" />
+      <None Remove="Data\**" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Blazorise" Version="1.0.5" />
       <PackageReference Include="Blazorise.Bootstrap" Version="1.0.5" />
+      <PackageReference Include="Blazorise.DataGrid" Version="1.0.5" />
     </ItemGroup>
 
 </Project>

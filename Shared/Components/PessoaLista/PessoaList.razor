@@ -1,6 +1,21 @@
 ﻿<h3>Componente trazendo uma lista de pessoas</h3>
-@foreach (var item in zabala){
-    <div>
-        @item.Nome
-    </div>
-}
+<div class="table-responsive">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in zabala)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td> @item.Nome</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

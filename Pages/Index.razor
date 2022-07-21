@@ -1,5 +1,21 @@
 ﻿@page "/"
-@using Teste.Shared.Components.PessoaLista
 
-<h1>Pagina Inicial</h1>
+<Div Class="p-0 m-0">
+    <Carousel @bind-SelectedSlide="@selectedSlide" @bind-Autoplay="@autoPlay">
+        <CarouselSlide Name="1">
+            <Image Source="https://picsum.photos/1000/500/?blur" Text="Lights image" Display="Display.Block" Width="Width.Is100" />
+        </CarouselSlide>
+        <CarouselSlide Name="2">
+            <Image Source="https://picsum.photos/1000/500/" Text="Keyboard image" Display="Display.Block" Width="Width.Is100" />
+        </CarouselSlide>
+        <CarouselSlide Name="3">
+            <Image Source="https://picsum.photos/1000/500/?blur=3" Text="Road image" Display="Display.Block" Width="Width.Is100" />
+        </CarouselSlide>
+    </Carousel>
+</Div>
+
+@code {
+    private string selectedSlide = "1";
+    private bool autoPlay = false;
+}
 
