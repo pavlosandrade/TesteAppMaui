@@ -133,3 +133,74 @@ a, .btn-link {
             font-size: 18px;
         }
 }
+
+/* Banner Slider */
+.controls {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .controls li {
+        z-index: 9;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        border-radius: 100%;
+        color: var(--perplan-green);
+        background: var(--perplan-white);
+    }
+
+        .controls li:first-child {
+            margin-left: 20px;
+        }
+
+        .controls li:last-child {
+            margin-right: 20px;
+        }
+
+        .controls li:hover {
+            color: var(--perplan-white);
+            background: var(--perplan-green);
+        }
+
+        .controls li.prev {
+            left: 20px;
+        }
+
+        .controls li.next {
+            right: 20px;
+        }
+
+    .controls i {
+        margin-top: 9px;
+    }
+
+.tns-nav {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    bottom: 10%;
+}
+
+    .tns-nav button {
+        height: 12px;
+        width: 8px;
+        background-color: var(--perplan-white);
+        border: none;
+        margin-left: 7px;
+        border-radius: 50%;
+    }
+
+    .tns-nav .tns-nav-active {
+        background-color: var(--perplan-green);
+    }

@@ -1,21 +1,40 @@
 ﻿@page "/"
+@inject IJSRuntime JS
 
-<Div Class="p-0 m-0">
-    <Carousel @bind-SelectedSlide="@selectedSlide" @bind-Autoplay="@autoPlay">
-        <CarouselSlide Name="1">
-            <Image Source="https://picsum.photos/1000/500/?blur" Text="Lights image" Display="Display.Block" Width="Width.Is100" />
-        </CarouselSlide>
-        <CarouselSlide Name="2">
-            <Image Source="https://picsum.photos/1000/500/" Text="Keyboard image" Display="Display.Block" Width="Width.Is100" />
-        </CarouselSlide>
-        <CarouselSlide Name="3">
-            <Image Source="https://picsum.photos/1000/500/?blur=3" Text="Road image" Display="Display.Block" Width="Width.Is100" />
-        </CarouselSlide>
-    </Carousel>
-</Div>
+
+<div class="position-relative">
+
+    <ul @ref="controlsSlider" class="controls">
+        <li class="prev">
+            <i class="fas fa-angle-left fa-1x "></i>
+        </li>
+        <li class="next">
+            <i class="fas fa-angle-right fa-1x "></i>
+        </li>
+    </ul>
+
+    <div @ref="bannerSlider">
+        <div class="">
+            <img class="img-fluid" src="https://dummyimage.com/1000x450/000/fff" />
+        </div>
+        <div class="">
+            <img class="img-fluid" src="https://dummyimage.com/1000x450/00D1FF/000" />
+        </div>
+        <div class="">
+            <img class="img-fluid" src="https://dummyimage.com/1000x450/E4FF00/000" />
+        </div>
+    </div>
+</div>
+
+
+
 
 @code {
-    private string selectedSlide = "1";
-    private bool autoPlay = false;
-}
+    private ElementReference bannerSlider;
+    private ElementReference controlsSlider;
 
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Task.Run(async () => await JS.InvokeVoidAsync("InitBannerSliderJs", bannerSlider, controlsSlider));
+    }
+}
