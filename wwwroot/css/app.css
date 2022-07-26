@@ -84,7 +84,19 @@ a, .btn-link {
 }
 */
 
+html {
+    position: relative;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    margin-bottom: 5rem;
+}
+
 .footer{
+    margin-top: 1rem;
     position: absolute;
     bottom: 0;
 }
@@ -156,7 +168,7 @@ a, .btn-link {
         height: 35px;
         text-align: center;
         border-radius: 100%;
-        color: var(--perplan-green);
+        color: red;
         background: var(--perplan-white);
     }
 

@@ -1,21 +1,21 @@
-﻿<h3>Componente trazendo uma lista de pessoas</h3>
-<div class="table-responsive">
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Codigo</th>
-                <th scope="col">Nome</th>
-            </tr>
-        </thead>
-        <tbody>
+﻿<section class="mt-2">
+    <div class="container">
+        <div class="row">
             @foreach (var item in zabala)
             {
-                <tr>
-                    <td>@item.Id</td>
-                    <td> @item.Nome</td>
-                </tr>
+                <div class="col-12 mb-2">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-7">
+                            <h4>@item.Nome</h4>
+                            <h6>@item.Localizacao</h6>
+                        </div>
+                        <div class="col-3">
+                            <h4 class="text-warning">@item.Preco</h4>
+                        </div>
+                    </div>
+                </div>
+                <Divider Class="text-danger px-5 mb-3"></Divider>
             }
-        </tbody>
-    </table>
-</div>
+        </div>
+    </div>
+</section>

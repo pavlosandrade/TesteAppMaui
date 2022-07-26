@@ -19,14 +19,23 @@ namespace Teste.Shared.Components.PessoaLista
             zabala = new List<Pessoa>();
             zabala.Add(new Pessoa()
             {
-                Id = 1,
-                Nome ="jhon"
+                Nome ="Heineken 700ml",
+                Localizacao = "Carrefour Via Norte",
+                Preco = "R$2,50"
             }) ;
 
             zabala.Add(new Pessoa()
             {
-                Id = 2,
-                Nome = "doe"
+                Nome = "Brahma 700ml",
+                Localizacao = "Savegnago Otto Junqueira",
+                Preco = "R$2,20"
+            });
+
+            zabala.Add(new Pessoa()
+            {
+                Nome = "Sub-zero 750ml",
+                Localizacao = "Carrefour Ribeirão Shopping",
+                Preco = "R$1,89"
             });
         }
     }

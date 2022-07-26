@@ -1,40 +1,50 @@
 ﻿@page "/"
-@inject IJSRuntime JS
+@using Teste.Shared.Components.CtaSlider
+@using Teste.Shared.Components.PessoaLista
 
 
-<div class="position-relative">
-
-    <ul @ref="controlsSlider" class="controls">
-        <li class="prev">
-            <i class="fas fa-angle-left fa-1x "></i>
-        </li>
-        <li class="next">
-            <i class="fas fa-angle-right fa-1x "></i>
-        </li>
-    </ul>
-
-    <div @ref="bannerSlider">
-        <div class="">
-            <img class="img-fluid" src="https://dummyimage.com/1000x450/000/fff" />
-        </div>
-        <div class="">
-            <img class="img-fluid" src="https://dummyimage.com/1000x450/00D1FF/000" />
-        </div>
-        <div class="">
-            <img class="img-fluid" src="https://dummyimage.com/1000x450/E4FF00/000" />
+<section class="pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="m-0" style="font-size: 1rem">Bem Vindo</h5>
+                <h2 class="text-danger">John Doe</h2>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 
+<section class="mt-4">
+    <div class="container">
+        <div class="row g-2">
+            @for (var i = 0; i < 6; i++)
+            {
+                <a href="pessoas" class="col-4 mb-3 text-decoration-none">
+                    <Div Class="bg-warning p-3 rounded-1 h-100">
+                        <Div Class="row align-items-center justify-content-center h-100">
+                            ICO
+                        </Div>
+                    </Div>
+                </a>
+            }
+        </div>
+    </div>
+</section>
 
+<CtaSlider></CtaSlider>
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-danger">Em Destaque</h2>
+            </div>
+        </div>
+    </div>
+    <PessoaList></PessoaList>
+</section>
 
 @code {
-    private ElementReference bannerSlider;
-    private ElementReference controlsSlider;
 
-    protected override void OnAfterRender(bool firstRender)
-    {
-        Task.Run(async () => await JS.InvokeVoidAsync("InitBannerSliderJs", bannerSlider, controlsSlider));
-    }
 }

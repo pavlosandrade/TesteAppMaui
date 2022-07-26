@@ -13,11 +13,11 @@ function InitBannerSliderJs(bannerSlider, controlsSlider) {
         container: bannerSlider,
         items: 1,
         slideBy: 'page',
-        autoplay: false,
+        autoplay: true,
         autoplayHoverPause: true,
         autoplayButtonOutput: false,
-        controls: true,
-        controlsContainer: controlsSlider,
+        controls: false,
+        /*controlsContainer: controlsSlider,*/
         mouseDrag: true,
         navPosition: "bottom",
     });

@@ -1,0 +1,39 @@
+﻿@inject IJSRuntime JS
+
+<section class="mt-3">
+    <div class="position-relative">
+        @*
+        <ul @ref="controlsSlider" class="controls">
+        <li class="prev">
+        <i class="fas fa-angle-left fa-1x "></i>
+        </li>
+        <li class="next">
+        <i class="fas fa-angle-right fa-1x "></i>
+        </li>
+        </ul>*@
+
+        <div @ref="bannerSlider">
+            <div class="">
+                <img class="img-fluid" src="https://dummyimage.com/1000x350/000/fff" />
+            </div>
+            <div class="">
+                <img class="img-fluid" src="https://dummyimage.com/1000x350/00D1FF/000" />
+            </div>
+            <div class="">
+                <img class="img-fluid" src="https://dummyimage.com/1000x350/E4FF00/000" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@code {
+    private ElementReference bannerSlider;
+    private ElementReference controlsSlider;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        Task.Run(async () => await JS.InvokeVoidAsync("InitBannerSliderJs", bannerSlider, controlsSlider));
+    }
+}
